@@ -2,7 +2,16 @@
 
 {% block content %}
 
-<h1>Task</h1>
 
+
+    {% if user.is_authenticated %}
+
+    <h1>Here are your tasks </h1> 
+
+    {% else %}
+        
+    <h1>You have to login to acces here </h1> 
+
+    {% endif %}
 
 {% endblock %}

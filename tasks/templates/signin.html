@@ -9,9 +9,9 @@
 <form action="" method="POST">
     {% csrf_token %}
     
-    {{ form }}
+    {{ form.as_p }}
     <BUtton>
-        Signup
+        Signin
     </BUtton>
 
 </form>
