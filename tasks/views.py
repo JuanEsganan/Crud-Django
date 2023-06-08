@@ -48,7 +48,7 @@ def tasks (request):
 @login_required ()
 def tasks_completed (request):
     tasks = Task.objects.filter (user=request.user, date_completed__isnull=False).order_by ("-date_completed")
-    return render (request, "tasks.html", {
+    return render (request, "tasks_completed.html", {
         "tasks":tasks
     })
 

@@ -22,17 +22,18 @@
                 </li>
                 
                 {% if user.is_authenticated %}
- 
-    
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url "tasks" %}">Tasks Pending</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url "tasks_completed" %}">View the all completed tasks</a>
-                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="/tasks/create">Create a new task</a>
                     </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "tasks" %}">Pending Tasks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "tasks_completed" %}">Completed tasks</a>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">Logout</a>
                     </li>
