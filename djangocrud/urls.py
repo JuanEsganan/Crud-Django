@@ -23,6 +23,11 @@ urlpatterns = [
     path ("", views.home, name="home"),
     path ("signup/", views.sign_up, name="signup"),
     path ("tasks/", views.tasks, name="tasks"),
+    path ("tasks/completed", views.tasks_completed, name="tasks_completed"),
+    path ("tasks/create", views.create_tasks, name="create_tasks"),
+    path ("task/<int:task_id>", views.task_detail, name="task_detail"),
+    path ("task/<int:task_id>/complete", views.task_complete, name="task_complete"),
+    path ("task/<int:task_id>/delete", views.task_delete, name="task_delete"),
     path ("logout/", views.sign_out, name="logout"),
     path ("signin/", views.sign_user, name="signin"),
 ]

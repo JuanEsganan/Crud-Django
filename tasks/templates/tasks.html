@@ -1,17 +1,38 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
 
-{% block content %}
+<main class="container">
 
-
-
-    {% if user.is_authenticated %}
-
-    <h1>Here are your tasks </h1> 
-
-    {% else %}
+  <div class="row">
+      <div class="col-md-6 offset-md-3">
         
-    <h1>You have to login to acces here </h1> 
+        <h1 class="text-center display-3 py-5">Pending Tasks</h1>
 
-    {% endif %}
+          <ul class="list-group">
+            {% for task in tasks %}
+              <li class="list-group-item">
+                <a href="{% url 'task_detail' task.id %}">
+                  {% if task.important %}
+                  <strong>{{task.title}}</strong>
+                </a>
+                  {% else %} 
+                  <a href="{% url 'task_detail' task.id %}">
+                  {{task.title}} 
+                </a>
+                  {% endif %}
+                  <p>{{task.description}}</p>
+                  <p>{{task.user.username}}</p>
+            
+                  <p>{{task.date_completed|date:'M j Y:i'}}</p>
+                
+              </li>
+            {% endfor %}
+          </ul>
+
+      </div>
+
+
+  </div>
+
+</main>
 
 {% endblock %}

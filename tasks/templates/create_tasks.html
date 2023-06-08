@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<main class="container">
+    <div class="row">
+
+        <div class="col-md-4 offset-md-4 mt-5">
+
+            
+    {% if user.is_authenticated %}
+
+    <h1>To create a Task use this form </h1> 
+
+    {{error}}
+
+    <form action="/tasks/create" method="POST" class="card card-body">
+        {% csrf_token %}
+
+        {{ form.as_p}}
+
+        <button  class="btn btn-primary" type="submit">
+            Save
+        </button>
+
+    </form>
+    {% else %}
+        
+    <h1>You have to login to acces here </h1> 
+
+    {% endif %}
+
+        </div>
+
+    </div>
+     
+</main>
+
+{% endblock %}

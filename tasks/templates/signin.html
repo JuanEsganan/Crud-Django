@@ -2,19 +2,24 @@
 
 {% block content %}
 
-<h1>Acces here <h1/>
 
-    {{ error }}
-
-<form action="" method="POST">
-    {% csrf_token %}
+<main class="container">
+    <div class="col-md-4 offset-md-4">
+        <form method="POST" class="card card-body">
+            <strong> Acces here</strong>
+            {{ error }}
+            {% csrf_token %}
+            {{ form }}
     
-    {{ form.as_p }}
-    <BUtton>
-        Signin
-    </BUtton>
+            <button>
+                Login
+            </button>
+    
+        </form>
 
-</form>
 
+    </div>
+
+</main>
 
 {% endblock %}
